@@ -1,6 +1,3 @@
-import datetime
-from email import message
-import imp
 import os
 
 import chardet
