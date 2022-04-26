@@ -88,6 +88,7 @@ def main():
 
         message = os.linesep.join([str(proportion)
                                   for proportion in proportions])
+        
         loguru.logger.info('PROPORTIONS' + os.linesep + message)
 
     if __name__ == '_main_':
