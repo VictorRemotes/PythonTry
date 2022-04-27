@@ -47,17 +47,17 @@ def getProxiesFromProxyNova():
         js = row('td:nth-child(1) > addr').text()
 
         js = 'let x = %s; x' % (js[15:-2])
-        
+
         ip = js2py.eval_js(js).strip()
-        
+
         port = row('td:nth-child(2)').text().strip()
-        
+
         proxy = f'{ip}:{port}'
         proxies.append(proxy)
     loguru.logger.success(f'getProxiesFromProxyNova: scanned')
-    loguru.logger.debug(f'getProxiesFromProxyNova: {len(proxies)} proxies is found. ')
-    
+    loguru.logger.debug(
+        f'getProxiesFromProxyNova: {len(proxies)} proxies is found. ')
+
     time.sleep(1)
-    
+
     return proxies
-        
