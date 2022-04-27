@@ -60,3 +60,4 @@ def getProxiesFromProxyNova():
     time.sleep(1)
 
     return proxies
+getProxiesFromProxyNova()

@@ -64,3 +64,4 @@ def getProxiesFromGatherProxy():
         time.sleep(1)
 
     return proxies
+getProxiesFromGatherProxy()
