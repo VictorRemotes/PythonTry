@@ -1,4 +1,3 @@
-import imp
 import time
 
 import js2py

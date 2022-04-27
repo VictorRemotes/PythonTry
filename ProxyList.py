@@ -1,12 +1,30 @@
-import csv
-import datetime
-from fileinput import filename
 import os
+import csv
 import loguru
+import random
+import datetime
 
 from ProxiesFromProxyNova import getProxiesFromProxyNova
 from ProxiesFromGatherProxy import getProxiesFromGatherProxy
 from ProxiesFromFreeProxyList import getProxiesFromFreeProxyList
+
+
+now = datetime.datetime.now()
+proxies = []
+
+# 隨機取出一組代理
+def getProxy():
+    global proxies
+    
+    # 若代理清單內已無代理，則重新下載
+    if len(proxies) == 0:
+        getProxies()
+    proxy = random.choice(proxies)
+    loguru.logger.debug(f'getProxy: {proxy}')
+    proxies.remove(proxy)
+    loguru.logger.debug(f'getProxy: {len(proxies)} proxies is unused.')
+    return proxy
+
 
 # 取得模組執行當下時間
 now = datetime.datetime.now()
